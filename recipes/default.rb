@@ -51,13 +51,13 @@ seds = [
 
 bash 'ssh hardening' do
   user 'root'
-  code <<-EOC
-    #{seds.map { |rx| "sed -i '#{rx}' #{sshd_config}" }.join("\n")}
-  EOC
+#  code <<-EOC
+#    #{seds.map { |rx| "sed -i '#{rx}' #{sshd_config}" }.join("\n")}
+#  EOC
 end
 
 service 'ssh' do
-  action :restart
+#  action :restart
 end
 
 # now allow SSH traffic through the firewall and restart SSH
